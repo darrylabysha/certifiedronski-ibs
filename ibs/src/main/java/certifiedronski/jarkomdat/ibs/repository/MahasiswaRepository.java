@@ -5,6 +5,7 @@ import certifiedronski.jarkomdat.ibs.model.Mahasiswa;
 
 
 public interface MahasiswaRepository extends JpaRepository<Mahasiswa, Long> {
+    
 
 }
 
