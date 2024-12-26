@@ -20,5 +20,10 @@ public class MahasiswaService {
         return mahasiswaRepository.findAll();
     }
 
+    public Mahasiswa getMahasiswaById(Long id) {
+        return mahasiswaRepository.findById(id)
+                                  .orElseThrow(() -> new IllegalArgumentException("Mahasiswa tidak ditemukan"));
+    }
+
 }
 

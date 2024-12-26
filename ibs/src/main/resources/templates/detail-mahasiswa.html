@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Mahasiswa</title>
+    <title>Detail Mahasiswa</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://ibs.ac.id/wp-content/uploads/fusion-styles/1cd77c3b0a7534ac63d5bde38c43dee1.min.css?ver=3.11.10">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -42,22 +41,15 @@
             text-align: center;
             font-weight: 600;
         }
-        .table-container {
+        .detail-container {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .table {
-            margin-bottom: 0;
-        }
-        .btn-details {
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-        }
-        .btn-details:hover {
-            background-color: #218838;
+        .detail-label {
+            font-weight: 600;
+            color: #333;
         }
         .footer {
             background-color: #007aff;
@@ -93,30 +85,25 @@
 
     <div class="container mt-4">
         <p class="subtitle">Indonesia Banking School Learning Management System</p>
-        <h1>Daftar Mahasiswa</h1>
-        <div class="table-container">
-            <table class="table table-striped">
-                <thead class="thead-light">
-                    <tr>
-                        <th scope="col">NIM</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Program Studi</th>
-                        <th scope="col">Angkatan</th>
-                        <th scope="col">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="mahasiswa : ${mahasiswaList}">
-                        <td th:text="${mahasiswa.nim}"></td>
-                        <td th:text="${mahasiswa.nama}"></td>
-                        <td th:text="${mahasiswa.programStudi}"></td>
-                        <td th:text="${mahasiswa.angkatan}"></td>
-                        <td>
-                            <a th:href="@{/mahasiswa/{id}(id=${mahasiswa.id})}" class="btn btn-details btn-sm">Detail</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <h1>Detail Mahasiswa</h1>
+        <div class="detail-container">
+            <div class="mb-3">
+                <span class="detail-label">NIM:</span>
+                <span th:text="${mahasiswa.nim}"></span>
+            </div>
+            <div class="mb-3">
+                <span class="detail-label">Nama:</span>
+                <span th:text="${mahasiswa.nama}"></span>
+            </div>
+            <div class="mb-3">
+                <span class="detail-label">Program Studi:</span>
+                <span th:text="${mahasiswa.programStudi}"></span>
+            </div>
+            <div class="mb-3">
+                <span class="detail-label">Angkatan:</span>
+                <span th:text="${mahasiswa.angkatan}"></span>
+            </div>
+            <a href="/" class="btn btn-primary">Kembali</a>
         </div>
     </div>
 
