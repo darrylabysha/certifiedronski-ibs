@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Entity
 @Data
+@Table(name = "mata_kuliah", schema = "AKADEMIK")
 public class MataKuliah {
 
     @Id
