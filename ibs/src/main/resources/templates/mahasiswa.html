@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Mahasiswa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        table {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Daftar Mahasiswa</h1>
+
+    <div class="mb-3">
+        <a href="/mahasiswa/add" class="btn btn-primary">Tambah Mahasiswa</a>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">NIM</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Program Studi</th>
+                <th scope="col">Angkatan</th>
+                <th scope="col">Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="mahasiswa : ${mahasiswaList}">
+                <td th:text="${mahasiswa.nim}"></td>
+                <td th:text="${mahasiswa.nama}"></td>
+                <td th:text="${mahasiswa.programStudi}"></td>
+                <td th:text="${mahasiswa.angkatan}"></td>
+                <td>
+                    <a href="#" class="btn btn-info btn-sm">Edit</a>
+                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
